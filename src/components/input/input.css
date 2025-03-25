@@ -1,0 +1,43 @@
+.input-container {
+  margin: 10px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label > span {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 1.5%;
+}
+
+.input {
+  display: flex;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 10px;
+  background: #EEF4FF;
+
+}
+
+input::placeholder {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 1.5%;
+  color: #C8C8C8;
+}
+
+input:focus {
+  outline: none;
+}

@@ -1,0 +1,129 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+  width: 100%;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 0 20px;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  scroll-snap-align: start;
+}
+
+
+.header-movile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+  width: 100%;
+  background: transparent;
+  padding: 0 20px;
+  scroll-snap-align: start;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 10px;
+}
+
+.listSection {
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 1;
+  list-style: none;
+  gap: clamp(20px, 3vw, 65px);
+}
+
+.listSection-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 1;
+  list-style: none;
+  gap: 8px;
+}
+
+.listSection > li > button {
+  cursor: pointer;
+  color: #000;
+  user-select: none;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: Instrument Sans;
+}
+
+.listSection > li > span {
+  color: #000;
+  user-select: none;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: Instrument Sans;
+}
+
+.listSection-mobile > li > button {
+  color: #000;
+  font-family: Inter;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 26.67px;
+}
+
+.listSection-mobile > li > span {
+  color: #000;
+  font-family: Inter;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 26.67px;
+}  
+
+.isActive {
+  font-weight: 700!important;
+}
+
+.heroSection {
+  display: flex;
+  max-width: 65px;
+  min-width: 60px
+}
+
+.heroSection > a > svg {
+  display: flex;
+}
+
+.movil {
+  display: none;
+  opacity: 0;
+  transition: display 0s allow-discrete, opacity 0.5s ease;
+}
+
+.hide {
+  display: none;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-button {
+  cursor: pointer;
+
+  span {
+    font-size: 14px !important;
+  }
+}
+
+.language-button-movile {
+  cursor: pointer;
+
+  span {
+    font-size: 18px !important;
+  }
+}

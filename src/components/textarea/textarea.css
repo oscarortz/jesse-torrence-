@@ -1,0 +1,49 @@
+.textarea-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 100%;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label > span {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 1.5%;
+}
+
+textarea {
+  height: 150px;
+  display: flex;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  padding-left: 15px;
+  padding-top: 15px;
+  background: #EEF4FF;
+  resize: none;
+}
+
+textarea::placeholder {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+
+  letter-spacing: 1.5%;
+  color: #C8C8C8;
+}
+
+textarea:focus {
+  outline: none;
+}

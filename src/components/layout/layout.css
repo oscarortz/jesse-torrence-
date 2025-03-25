@@ -1,0 +1,12 @@
+.layout-page {
+  height: 100dvh;
+}
+
+.layout-content {
+  scroll-snap-type: y mandatory;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}

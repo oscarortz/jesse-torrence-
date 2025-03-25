@@ -1,0 +1,356 @@
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('/fonts/InstrumentSans-Regular.woff2') format('woff2'),
+        url('/fonts/InstrumentSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('/fonts/InstrumentSans-Bold.woff2') format('woff2'), url('/fonts/InstrumentSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Bold.woff2') format('woff2'), url('/fonts/Inter-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Medium.woff2') format('woff2'), url('/fonts/Inter-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.woff2') format('woff2'), url('/fonts/Inter-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Light.woff2') format('woff2'), url('/fonts/Inter-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/*** Estilo para Home Section */
+.home-message {
+  width: clamp(80%, 65%, 50%);
+}
+
+.home-message > h2 {
+  color: #fff;
+  font-family: Instrument Sans;
+  font-weight: 400;
+  font-size: clamp(30px, 50px ,50px);
+  line-height: 100%;
+  letter-spacing: normal;
+  text-align: center;
+}
+/*** Estilo para Home Section */
+
+
+/*** Estilo para About Section */
+.about-header {
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: normal;
+  text-align: center;
+  padding-bottom: var(--padding-bottom);
+}
+
+.about-header-little-message {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #168F34;
+  padding-bottom: var(--padding-bottom-small);
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.about-container-tablet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.about-container-movile {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+/*** Estilo para About Section */
+
+
+/*** Estilo para Services Section */
+
+.services-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.services-container-tablet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.services-container-movil {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.services-card-container-movile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.services-card-container-tablet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.services-card-container {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-header {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+  text-align: center;
+  color: white;
+  padding-bottom: var(--padding-bottom);
+}
+
+.service-header-movile {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 100%;
+  text-align: center;
+  color: white;
+  padding-bottom: var(--padding-bottom-small);
+}
+
+.service-header-little-message {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  padding-bottom:  var(--padding-bottom-small);
+}
+
+.service-header-little-message-movile {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  padding: 5px 0px;
+}
+
+.services-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/*** Estilo para Services Section */
+
+/*** Estilo para Testimonial Section */
+.testimonial-title {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: 0%;
+  text-align: center;
+  padding-bottom: var(--padding-bottom);
+}
+
+.testimonial-title-movil {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  padding-bottom: var(--padding-bottom);
+}
+
+.testimonial-container-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.testimonial-container-carousel-movil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 80%;
+}
+
+.testimonial-little-message {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 6%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #4A8158;
+  padding-bottom: var(--padding-bottom-small);
+}
+
+.testimonial-little-message-movil {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 6%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #4A8158;
+  padding-bottom: var(--padding-bottom-small);
+}
+/*** Estilo para Testimonial Section */
+
+
+
+/**  Estilos para Contact section **/
+
+.contact-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  
+  h2 {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    padding-bottom: var(--padding-bottom);
+  }
+
+  h3 {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+  }
+
+  h4 {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    padding-bottom: var(--padding-bottom-small);
+  }
+
+}
+
+.contact-header-container-movil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+
+  h2 {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+  }
+
+  h3 {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+  }
+
+  h4 {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+  }
+}
+
+/**  Estilos para Contact section **/

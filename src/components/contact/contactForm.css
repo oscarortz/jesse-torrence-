@@ -1,0 +1,135 @@
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 50px;
+  border-radius: 10px;
+  min-width: 60%;
+  max-width: 70%;
+}
+
+.contact-container-movil {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 100%;
+}
+
+.form-container {
+  display: flex;
+  padding: 10px;
+}
+
+.textarea-wrapper {
+  height: 100%;
+  display: flex;
+  padding-bottom: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+  cursor: pointer;
+  border: none;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 15px 5px;
+  max-width: 250px;
+  width: 100%;
+  background-color: #A1B88E;
+
+  span {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+.button-movil {
+  display: flex;
+  cursor: pointer;
+  border: none;
+  color: black;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 15px 5px;
+  width: 100%;
+  background-color: #A1B88E;
+  box-shadow: 0 4px 4px #00000040;
+
+  span {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+.form-container-movil {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.inputs-container-movil {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 100%;
+}
+
+.textarea-wrapper-movil {
+  height: 100%;
+  display: flex;
+  padding: 0 20px;
+  gap: 25px;
+  padding-bottom: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.form-header-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+
+  h2 {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    vertical-align: middle;
+  }
+
+  h3 {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    vertical-align: middle;
+  }
+}

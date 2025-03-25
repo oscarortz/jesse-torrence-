@@ -1,0 +1,102 @@
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  padding-left: 10px;
+}
+
+.carousel-container-tablet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 60%;
+  padding-left: 10px;
+}
+
+.carousel-container-movil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.card-container {
+  margin-left: 15px;
+  padding: 20px;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  width: 100%;
+  gap: 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.card-container-tablet {
+  margin-left: 15px;
+  padding: 20px;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  width: 73%;
+  gap: 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.card-container-movile {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  scrollbar-width: none;
+  padding: 20px 0;
+}
+
+.button-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 100%;
+  position: absolute;
+  svg {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.indicator-container {
+  display: flex;
+  gap: 10px;
+}
+
+.blue-indicator {
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
+  background-color: blue;
+  border: none;
+}
+
+.gray-indicator {
+  border-radius: 100%;
+  border: 1px solid gray;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+}
