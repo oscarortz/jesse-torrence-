@@ -1,21 +1,24 @@
 .header {
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 100px;
   width: 100%;
   background: transparent;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   padding: 0 20px;
   position: fixed;
   z-index: 1000;
   top: 0;
-  scroll-snap-align: start;
 }
 
 
 .header-movile {
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,7 +26,6 @@
   width: 100%;
   background: transparent;
   padding: 0 20px;
-  scroll-snap-align: start;
 }
 
 .nav {

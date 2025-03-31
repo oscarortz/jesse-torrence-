@@ -15,12 +15,13 @@ import ServiceCard from '@/components/service/ServiceCard';
 import AboutContent from '@/components/about/AboutContent';
 import useObserver from '../hooks/useObserver'
 import { getSeparateText } from '@/utils/utilities';
+import MenuHeader from '@/components/menu-header/MenuHeader';
 
 const URL = '/data.json'
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState('');
-
+  const [isMenuMobilOpen, setIsMenuMobileOpen] = useState(false);
   const { lang } = useLanguage();
   const [dataPerLang, setDataPerLang] = useState<LanguageContent>();
   const [observer, setElements, entries] = useObserver({ threshold: 0.25, root: null });
@@ -28,6 +29,7 @@ const Home = () => {
   const device = useDevice();
   const isMobile = device === 'movil';
   const isTablet = device === 'tablet';
+  const isHomeSection = activeSection === 'home';
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -55,18 +57,29 @@ const Home = () => {
   const onSelect = (id: string) => setActiveSection(id);
   const homeMessage = useMemo(() => getSeparateText({text: dataPerLang?.home?.title}), [dataPerLang?.home]);
   const movilStyles: CSSProperties = {flexDirection: 'column', justifyContent: 'flex-start'};
+  const toggleMenuMobile = () => setIsMenuMobileOpen(prev => !prev)
 
   return (
     <LayoutPage>
       <LayoutContent>
-        <Header sections={dataPerLang?.sections} onSelect={onSelect} activeSection={activeSection} isMobile={isMobile}/>
+        <Header
+          sections={dataPerLang?.sections} 
+          onSelect={onSelect} 
+          activeSection={activeSection} 
+          isMobile={isMobile} 
+          handleMenuClick={toggleMenuMobile} 
+          isMenuMobilOpen={isMenuMobilOpen}
+          isHomeSection={isHomeSection}
+        />
         <Section id='home' bgImage={dataPerLang?.home?.image}>
           <div className='home-message'>{homeMessage && homeMessage.map((message, index) => (
             <h2 key={index}>{message}</h2>
           ))}</div>
         </Section>
 
-        <Section id='about' bgColor='#fff' overflowY='auto'>
+        {!isHomeSection && isMobile && <MenuHeader toggleMenuState={toggleMenuMobile} size='25px' color={'#168F34'} isFloatMenu/>}
+
+        <Section id='about' bgColor='#fff'>
           <div className={isMobile ? 'about-container-movile' : isTablet ? 'about-container-tablet' : 'about-container'}>
             {!isMobile && <h4 className='about-header-little-message'>{dataPerLang?.about?.littleMessage}</h4>}
             <h2 className='about-header'>{dataPerLang?.about?.header}</h2>
@@ -74,7 +87,7 @@ const Home = () => {
           </div>
         </Section>
   
-        <Section id='services' bgColor='#A1B88E' overflowY='auto' padding={isMobile ? '0px' : '30px 10px'}>
+        <Section id='services' bgColor='#A1B88E' padding={isMobile ? '0px' : '30px 10px'}>
           <div className={isMobile ? 'services-container-movil' : isTablet ? 'services-container-tablet' : 'services-container'}>
             <h4 className={`${isMobile ? 'service-header-little-message-movile' : 'service-header-little-message'}`}>{dataPerLang?.services?.littleMessage}</h4>
             <h2 className={`${isMobile ? 'service-header-movile' : 'service-header'}`}>{dataPerLang?.services?.header}</h2>
@@ -86,7 +99,7 @@ const Home = () => {
           </div>
         </Section>
 
-        <Section id='testimonials' bgColor='#fff' overflowY='auto' >
+        <Section id='testimonials' bgColor='#fff'>
           <h4 className={`${isMobile ? 'testimonial-little-message-movil' : 'testimonial-little-message'}`}>{dataPerLang?.testimonials?.littleMessage}</h4>
           <h2 className={`${isMobile ? 'testimonial-title-movil' : 'testimonial-title'}`}>{dataPerLang?.testimonials?.header}</h2>
           <div className={`${isMobile ? 'testimonial-container-carousel-movil' : 'testimonial-container-carousel'}`}>
@@ -94,7 +107,7 @@ const Home = () => {
           </div>
         </Section>
 
-        <Section id='contact' bgColor='#A1B88E' overflowY='auto' padding={isMobile ? '20px' : ''}>
+        <Section id='contact' bgColor='#A1B88E' padding={isMobile ? '20px' : ''} justifyContent={!isMobile ? 'center' : 'normal'}>
           <div className={`${isMobile ? 'contact-header-container-movil' : 'contact-header-container'}`}>
             {lang === 'es' && !isMobile && <h4>{dataPerLang?.contact?.littleMessage}</h4>}
             {lang === 'es' && !isMobile && <h2>{dataPerLang?.contact?.header}</h2>}

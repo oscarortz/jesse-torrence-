@@ -1,5 +1,3 @@
-'use client'
-import React, { useEffect, useState } from 'react';
 import './header.css'
 import Link from 'next/link';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -11,22 +9,33 @@ import NavSection from './NavSection';
 
 
 interface HeaderProps {
+  id?: string;
   sections: Section[] | undefined;
   onSelect: (id: string) => void;
   activeSection: string;
   isMobile: boolean;
+  handleMenuClick: () => void;
+  isMenuMobilOpen: boolean;
+  isHomeSection: boolean;
 }
 
-function Header({ sections, onSelect, activeSection, isMobile }: HeaderProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+function Header({ id, sections, onSelect, activeSection, isMobile, handleMenuClick, isMenuMobilOpen, isHomeSection }: HeaderProps) {
   const { lang, setLang } = useLanguage();
 
   const updateLang = () => {
     setLang(lang === 'es' ? 'en' : 'es');
   };
 
+  const colorLetterFill = isHomeSection && !isMobile ? '#fff' : '#000';
+  const colorFill = isHomeSection && !isMobile ? '#fff' : '#168F34';
+
   const handleScroll = (id: string) => {
-    const newId = id.slice(1)
+    let newId = id.slice(1);
+    
+    if (newId === 'home' && isMobile) {
+      newId = 'header'
+    }
+
     const targetElement = window.document.getElementById(newId);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth" });
@@ -39,25 +48,23 @@ function Header({ sections, onSelect, activeSection, isMobile }: HeaderProps) {
     onSelect(href);
   };
 
-  const handleMenuClick = () => setIsMenuOpen(prev => !prev)
-
   return (
-    <header className={`${isMobile ? 'header-movile' : 'header'}`}>
+    <header  id='header' className={`${isMobile ? 'header-movile' : 'header'}`}>
       <Link href={'#'} onClick={(e) => handleLinkClick(e, '#home')}>
-        <HeaderLogo />
+        <HeaderLogo colorFill={colorFill} colorLetter={colorLetterFill}/>
       </Link>
       <nav>
-        {isMobile ? 
-          <MenuHeader toggleMenuState={handleMenuClick}/> : 
-          <NavSection 
-            activeSection={activeSection} 
-            handleLinkClick={handleLinkClick} 
-            lang={lang} 
-            sections={sections} 
-            updateLang={updateLang}
-          />
+        {isMobile 
+          ? <MenuHeader toggleMenuState={handleMenuClick}/> 
+          : <NavSection 
+              activeSection={activeSection} 
+              handleLinkClick={handleLinkClick} 
+              lang={lang} 
+              sections={sections} 
+              updateLang={updateLang}
+            />
         }
-        {isMenuOpen && isMobile ? (
+        {isMenuMobilOpen && isMobile ? (
           <MobileNav 
             lang={lang} 
             sections={sections} 
@@ -66,6 +73,7 @@ function Header({ sections, onSelect, activeSection, isMobile }: HeaderProps) {
             isMobile={isMobile} 
             updateLang={updateLang}
             onCloseClick={handleMenuClick}
+            isHomeSection={isHomeSection}
           />
         ) : null}
       </nav>

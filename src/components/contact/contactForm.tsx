@@ -23,6 +23,10 @@ function ContactForm({ contact, isMobile }: Props) {
 
   const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
+    const { full_name, email, share_your_message, website } = data;
+    const mailtoLink =
+      `mailto:oscarortz.dev@gmail.com?subject=${full_name}&body=Nombre: ${full_name}%0AEmail: ${email}%0AWebsiteOrLinkedin: ${website}%0AMessage: ${share_your_message}`;
+    window.location.href = mailtoLink;
     setData(initialData);
   }
 

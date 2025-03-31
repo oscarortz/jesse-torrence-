@@ -1,18 +1,16 @@
 .card {
   display: flex;
   overflow: hidden;
-  padding: 40px;
+  padding: 35px;
   align-items: center;
   flex-direction: column;
   gap: 32px;
   scroll-snap-align: start;
-  width: 500px;
-  height: 450px;
+  height: clamp(85%, 600px, 20vh);
   border-radius: 20px;
-  min-width: 400px;
-  max-width: 550px;
   background-color: #FAFAFA;
   box-shadow: 0 4px 4px #00000040;
+  margin: 10px;
 
   p {
     display: flex;
@@ -28,35 +26,42 @@
 
 .card-movil {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   overflow: hidden;
-  padding: 20px;
+  padding: 25px;
   align-items: center;
   flex-direction: column;
   scroll-snap-align: start;
-  width: 92%;
-  height: auto;
+  height: 85%;
+  max-height: 90%;
+  min-height: 90%;
   border-radius: 20px;
-  min-width: 92%;
-  max-width: 92%;
   background-color: #FAFAFA;
   box-shadow: 0 4px 4px #00000040;
+  margin: 10px 0px;
   
   p {
     display: flex;
     flex-grow: 1;
-    text-align: center;
+    text-align: justify;
+    text-wrap-style: pretty;
     font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 100%;
     letter-spacing: normal;
   }
+
+  svg {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 
 .testimonial-header-container {
   width: 100%;
+  gap: 10px;
   display: flex;
   justify-content: space-between;
 }
@@ -71,7 +76,7 @@
 .testimonial-header {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 8px;
 }
 
 .testimonial-header-movil {
@@ -86,7 +91,7 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 24px;
-    letter-spacing: 0%;
+    padding-bottom: 5px;
   }
 
   h5 {
@@ -96,7 +101,7 @@
     font-size: 18px;
     line-height: 24px;
     text-align: center;
-    color: #1E1E1E99;  
+    color: #1E1E1E99;
   }
 }
 
@@ -105,7 +110,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
-  letter-spacing: 0%;
+  padding-bottom: 5px;
 }
 
 .testimonial-header > h5 {
@@ -114,7 +119,6 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  letter-spacing: 0px;
   color: #1E1E1E99;  
 }
 

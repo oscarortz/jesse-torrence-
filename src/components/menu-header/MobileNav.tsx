@@ -11,13 +11,14 @@ type Props = {
   updateLang: () => void;
   lang: string;
   isMobile: boolean;
+  isHomeSection: boolean;
   onCloseClick: () => void;
 }
 
-function MobileNav({ sections, activeSection, handleLinkClick, lang, updateLang, isMobile, onCloseClick }: Props) {
+function MobileNav({ sections, activeSection, handleLinkClick, lang, updateLang, isMobile, onCloseClick, isHomeSection }: Props) {
 
   return (
-    <div className='nav-movil'>
+    <div className={`${isHomeSection ? 'nav-mobile' : 'nav-mobile-position'}`}>
       <div className='icon-container'>
         <CloseIcon size='40px' onCloseClick={onCloseClick}/>
       </div>

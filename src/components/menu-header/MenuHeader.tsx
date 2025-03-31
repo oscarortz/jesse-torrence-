@@ -3,13 +3,16 @@ import './menuHeader.css'
 
 type Props = {
   toggleMenuState: () => void;
+  isFloatMenu?: boolean;
+  size?: string;
+  color?: string;
 }
 
-function MenuHeader({ toggleMenuState }: Props) {
+function MenuHeader({ toggleMenuState, isFloatMenu, size = '40px', color }: Props) {
 
   return (
-    <button className='menu-movile' onClick={toggleMenuState}>
-      <MenuIcon size='40px'/>
+    <button className={`${isFloatMenu ? 'float-menu' : 'menu-movile'}`} onClick={toggleMenuState}>
+      <MenuIcon size={size} color={color}/>
     </button>
   )
 }
