@@ -9,7 +9,6 @@ import NavSection from './NavSection';
 
 
 interface HeaderProps {
-  id?: string;
   sections: Section[] | undefined;
   onSelect: (id: string) => void;
   activeSection: string;
@@ -19,7 +18,7 @@ interface HeaderProps {
   isHomeSection: boolean;
 }
 
-function Header({ id, sections, onSelect, activeSection, isMobile, handleMenuClick, isMenuMobilOpen, isHomeSection }: HeaderProps) {
+function Header({ sections, onSelect, activeSection, isMobile, handleMenuClick, isMenuMobilOpen, isHomeSection }: HeaderProps) {
   const { lang, setLang } = useLanguage();
 
   const updateLang = () => {

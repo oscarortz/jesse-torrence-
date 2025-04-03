@@ -95,14 +95,14 @@
   padding-top: 30px;
 }
 
-.services-card-container-movile {
+.page-services-card-container-movile {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.services-card-container-tablet {
+.page-services-card-container-tablet {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,7 +110,7 @@
   gap: 10px;
 }
 
-.services-card-container {
+.page-services-card-container {
   overflow-y: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;

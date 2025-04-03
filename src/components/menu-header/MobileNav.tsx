@@ -15,7 +15,7 @@ type Props = {
   onCloseClick: () => void;
 }
 
-function MobileNav({ sections, activeSection, handleLinkClick, lang, updateLang, isMobile, onCloseClick, isHomeSection }: Props) {
+function MobileNav({ sections, activeSection, handleLinkClick, lang, updateLang, onCloseClick, isHomeSection }: Props) {
 
   return (
     <div className={`${isHomeSection ? 'nav-mobile' : 'nav-mobile-position'}`}>

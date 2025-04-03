@@ -23,6 +23,7 @@ function AboutContent({ about, isMobile, isTablet }: Props) {
   return (
     <div className={`${isMobile ? 'description-card-movile': 'description-card'}`}>
       <div className={`${isMobile ? 'imagen-container-movil': isTablet ? 'image-container-tablet' : 'imagen-container'}`}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         {about && <img src={getImage()} alt={about.name}/>}
       </div>
       <div className='description-container'>
@@ -37,6 +38,7 @@ function AboutContent({ about, isMobile, isTablet }: Props) {
         {about && about.recognitions.map((img, index) => {
           return (
             <div className={isMobile ? 'recognition-movil' : isTablet ? 'recognition-tablet' : 'recognition'} key={index}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={img} alt={'recognitions'} />
             </div>
           )

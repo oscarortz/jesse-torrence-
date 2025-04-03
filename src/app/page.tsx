@@ -19,12 +19,14 @@ import MenuHeader from '@/components/menu-header/MenuHeader';
 
 const URL = '/data.json'
 
-const Home = () => {
+export default function Home () {
   const [activeSection, setActiveSection] = useState('');
   const [isMenuMobilOpen, setIsMenuMobileOpen] = useState(false);
   const { lang } = useLanguage();
   const [dataPerLang, setDataPerLang] = useState<LanguageContent>();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [observer, setElements, entries] = useObserver({ threshold: 0.25, root: null });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { data, error, loading } = useFetch<Translations>(URL);
   const device = useDevice();
   const isMobile = device === 'movil';
@@ -91,7 +93,7 @@ const Home = () => {
           <div className={isMobile ? 'services-container-movil' : isTablet ? 'services-container-tablet' : 'services-container'}>
             <h4 className={`${isMobile ? 'service-header-little-message-movile' : 'service-header-little-message'}`}>{dataPerLang?.services?.littleMessage}</h4>
             <h2 className={`${isMobile ? 'service-header-movile' : 'service-header'}`}>{dataPerLang?.services?.header}</h2>
-            <div className={`${isMobile ? 'services-card-container-movile' : isTablet ? 'services-card-container-tablet' : 'services-card-container'}`}>
+            <div className={`${isMobile ? 'page-services-card-container-movile' : isTablet ? 'page-services-card-container-tablet' : 'page-services-card-container'}`}>
               {dataPerLang?.services?.services.map((service, index) => (
                 <ServiceCard key={index} service={service} style={isMobile ? movilStyles : undefined} isMobile={isMobile} isTablet={isTablet}/>
               ))}
@@ -120,7 +122,3 @@ const Home = () => {
     </LayoutPage>
   );
 }
-
-
-export default Home;
-

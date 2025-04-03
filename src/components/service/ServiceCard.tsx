@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Service } from '@/types/data.type'
 import './serviceCard.css'
 type Props = {
@@ -15,7 +16,7 @@ function ServiceCard ({ service, style, isMobile, isTablet }: Props) {
     </div>
     <div className={`${isMobile ? 'service-content-container-movil' : 'service-content-container'}`}>
       <h4>{service.title}</h4>
-      <div>
+      <div className='service-description-container'>
         <p>{service.description}</p>
       </div>
     </div>

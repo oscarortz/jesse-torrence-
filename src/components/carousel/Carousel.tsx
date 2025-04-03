@@ -1,3 +1,4 @@
+'use client';
 import TestimonialCard from '../testimonials/TestimonialCard'
 import { Testimonial } from '@/types/data.type';
 import './carousel.css'
@@ -13,7 +14,7 @@ type Props = {
   isTablet: boolean;
 }
 
-function Carousel({ testimonials, isMobile, isTablet }: Props) {
+function Carousel({ testimonials, isMobile }: Props) {
 
   return (
     <>
@@ -27,10 +28,10 @@ function Carousel({ testimonials, isMobile, isTablet }: Props) {
         navigation={true}
         loop={true}
         grabCursor={true}
-        // autoplay={{
-        //   delay: 5000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
           modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
           className='mySwiper'
         >

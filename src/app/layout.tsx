@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Carla Larangeria Coach",
-  description: "Pagina de Carla Larangeria experto en coach empresarial",
+  title: "Carla Larangeria",
+  description: "Pagina de Carla Larangeria experta en coaching empresarial",
 };
 
 export default function RootLayout({

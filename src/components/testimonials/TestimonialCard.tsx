@@ -1,5 +1,4 @@
 
-import { Testimonial } from '@/types/data.type';
 import './testimonialCard.css'
 import QuotesComponent from '../svg-components/Quotes';
 

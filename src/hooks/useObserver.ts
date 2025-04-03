@@ -28,6 +28,7 @@ export default function useObserver(options: IntersectionObserverInit) {
     return () => {
       currentObserver.disconnect();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [elements]);
 
   return [observer.current, setElements, entries] as [

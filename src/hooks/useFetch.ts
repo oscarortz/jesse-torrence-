@@ -11,7 +11,7 @@ export const useFetch = <T>(url: string) => {
     fetch(url)
     .then((response) => response.json())
     .then((json) => setData(json))
-    .catch((error) => {
+    .catch(() => {
       setError(true)
       throw new Error('Error to fetch data')
     })
@@ -23,6 +23,7 @@ export const useFetch = <T>(url: string) => {
 
   useEffect(() => {
     getData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
   return { data, error, loading }
