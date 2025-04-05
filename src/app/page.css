@@ -186,7 +186,6 @@
   font-weight: 700;
   font-size: 25px;
   line-height: 100%;
-  letter-spacing: 0%;
   text-align: center;
   padding-bottom: var(--padding-bottom);
 }
@@ -196,16 +195,16 @@
   align-items: center;
   justify-content: center;
   max-width: 100%;
-  min-height: 55%;
-  max-height: 56%;
+  min-height: 50%;
+  max-height: 90%;
 }
 
 .testimonial-container-carousel-movil {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 90%;
-  min-height: 75%;
+  max-width: 95%;
+  min-height: 85%;
 }
 
 .testimonial-little-message {
@@ -229,11 +228,10 @@
   text-align: center;
   text-transform: uppercase;
   color: #4A8158;
+  padding-top: 15px;
   padding-bottom: var(--padding-bottom-small);
 }
 /*** Estilo para Testimonial Section */
-
-
 
 /**  Estilos para Contact section **/
 

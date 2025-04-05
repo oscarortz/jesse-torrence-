@@ -21,6 +21,7 @@
 
 .input {
   display: flex;
+  font-family: Inter;
   height: 50px;
   border: none;
   border-radius: 5px;

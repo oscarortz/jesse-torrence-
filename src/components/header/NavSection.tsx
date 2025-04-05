@@ -11,7 +11,7 @@ type Props = {
 }
 
 function NavSection({ sections, activeSection, handleLinkClick, updateLang, lang }: Props) {
-  const device = useDevice();
+  const { device } = useDevice();
   const isMobile = device === 'movil';
 
   return (

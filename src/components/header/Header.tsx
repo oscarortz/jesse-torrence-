@@ -6,6 +6,7 @@ import { Section } from '@/types/data.type';
 import MenuHeader from '../menu-header/MenuHeader';
 import MobileNav from '../menu-header/MobileNav';
 import NavSection from './NavSection';
+import { useEffect, useRef } from 'react';
 
 
 interface HeaderProps {
@@ -19,6 +20,7 @@ interface HeaderProps {
 }
 
 function Header({ sections, onSelect, activeSection, isMobile, handleMenuClick, isMenuMobilOpen, isHomeSection }: HeaderProps) {
+  const menuMobileRef = useRef<HTMLDivElement | null>(null);
   const { lang, setLang } = useLanguage();
 
   const updateLang = () => {
@@ -43,15 +45,32 @@ function Header({ sections, onSelect, activeSection, isMobile, handleMenuClick, 
   
   const handleLinkClick = (e: React.MouseEvent, href: string) => {
     e.stopPropagation();
-    handleScroll(href)
+    e.preventDefault();
+    if(activeSection === 'home' && activeSection === href) return;
+    handleScroll(href);
     onSelect(href);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuMobileRef.current && !menuMobileRef.current.contains(event.target as Node)) {
+        handleMenuClick();
+      }
+    };
+
+    if (isMenuMobilOpen) {
+      document.addEventListener('pointerdown', handleClickOutside);
+    }
+
+    return () => document.removeEventListener('pointerdown', handleClickOutside);
+  }, [isMenuMobilOpen])
+  
+
   return (
     <header  id='header' className={`${isMobile ? 'header-movile' : 'header'}`}>
-      <Link href={'#'} onClick={(e) => handleLinkClick(e, '#home')}>
+      <button className='logo-button' onClick={(e) => handleLinkClick(e, '#home')}>
         <HeaderLogo colorFill={colorFill} colorLetter={colorLetterFill}/>
-      </Link>
+      </button>
       <nav>
         {isMobile 
           ? <MenuHeader toggleMenuState={handleMenuClick}/> 
@@ -64,7 +83,8 @@ function Header({ sections, onSelect, activeSection, isMobile, handleMenuClick, 
             />
         }
         {isMenuMobilOpen && isMobile ? (
-          <MobileNav 
+          <MobileNav
+            ref={menuMobileRef}
             lang={lang} 
             sections={sections} 
             activeSection={activeSection} 

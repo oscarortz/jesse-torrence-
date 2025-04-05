@@ -11,11 +11,12 @@ import { LanguageContent, Translations } from '@/types/data.type';
 import { useDevice } from '@/context/DeviceContext';
 import Carousel from '@/components/carousel/Carousel';
 import ContactForm from '@/components/contact/contactForm';
-import ServiceCard from '@/components/service/ServiceCard';
+import ServiceCard from '@/components/services/ServiceCard';
 import AboutContent from '@/components/about/AboutContent';
 import useObserver from '../hooks/useObserver'
 import { getSeparateText } from '@/utils/utilities';
 import MenuHeader from '@/components/menu-header/MenuHeader';
+import Footer from '@/components/footer/Footer';
 
 const URL = '/data.json'
 
@@ -25,12 +26,13 @@ export default function Home () {
   const { lang } = useLanguage();
   const [dataPerLang, setDataPerLang] = useState<LanguageContent>();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [observer, setElements, entries] = useObserver({ threshold: 0.25, root: null });
+  const [observer, setElements, entries] = useObserver({ threshold: 0.35, root: null });
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { data, error, loading } = useFetch<Translations>(URL);
-  const device = useDevice();
+  const { device } = useDevice();
   const isMobile = device === 'movil';
   const isTablet = device === 'tablet';
+  const isSmallDesk = device === 'small-desktop';
   const isHomeSection = activeSection === 'home';
 
   useEffect(() => {
@@ -79,7 +81,7 @@ export default function Home () {
           ))}</div>
         </Section>
 
-        {!isHomeSection && isMobile && <MenuHeader toggleMenuState={toggleMenuMobile} size='25px' color={'#168F34'} isFloatMenu/>}
+        {activeSection !== 'home' && activeSection !== '#home' ? <MenuHeader toggleMenuState={toggleMenuMobile} size='25px' color={'#168F34'} isFloatMenu/> : <></>}
 
         <Section id='about' bgColor='#fff'>
           <div className={isMobile ? 'about-container-movile' : isTablet ? 'about-container-tablet' : 'about-container'}>
@@ -95,7 +97,7 @@ export default function Home () {
             <h2 className={`${isMobile ? 'service-header-movile' : 'service-header'}`}>{dataPerLang?.services?.header}</h2>
             <div className={`${isMobile ? 'page-services-card-container-movile' : isTablet ? 'page-services-card-container-tablet' : 'page-services-card-container'}`}>
               {dataPerLang?.services?.services.map((service, index) => (
-                <ServiceCard key={index} service={service} style={isMobile ? movilStyles : undefined} isMobile={isMobile} isTablet={isTablet}/>
+                <ServiceCard key={index} service={service} style={isMobile ? movilStyles : undefined} isMobile={isMobile} isTablet={isTablet} smallDesktop={isSmallDesk}/>
               ))}
             </div>
           </div>
@@ -105,7 +107,7 @@ export default function Home () {
           <h4 className={`${isMobile ? 'testimonial-little-message-movil' : 'testimonial-little-message'}`}>{dataPerLang?.testimonials?.littleMessage}</h4>
           <h2 className={`${isMobile ? 'testimonial-title-movil' : 'testimonial-title'}`}>{dataPerLang?.testimonials?.header}</h2>
           <div className={`${isMobile ? 'testimonial-container-carousel-movil' : 'testimonial-container-carousel'}`}>
-            <Carousel testimonials={dataPerLang?.testimonials?.testimonials} isMobile={isMobile} isTablet={isTablet}/>
+            <Carousel testimonials={dataPerLang?.testimonials?.testimonials} isMobile={isMobile} isTablet={isTablet} isSmallDesk={isSmallDesk}/>
           </div>
         </Section>
 
@@ -118,6 +120,7 @@ export default function Home () {
           </div>
           <ContactForm contact={dataPerLang?.contact} isMobile={isMobile}/>
         </Section>
+        {isMobile ? <Footer id='footer' onSelect={onSelect}/> : <></>}
       </LayoutContent>
     </LayoutPage>
   );

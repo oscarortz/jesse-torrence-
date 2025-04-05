@@ -3,7 +3,7 @@ import TestimonialCard from '../testimonials/TestimonialCard'
 import { Testimonial } from '@/types/data.type';
 import './carousel.css'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, EffectCoverflow, Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
@@ -12,28 +12,37 @@ type Props = {
   testimonials: Testimonial[] | undefined;
   isMobile: boolean;
   isTablet: boolean;
+  isSmallDesk: boolean;
 }
+type SlideType =  number | "auto" | undefined
 
-function Carousel({ testimonials, isMobile }: Props) {
+function Carousel({ testimonials, isMobile, isTablet, isSmallDesk }: Props) {
+
+  const getSlidesPerview = () : SlideType  => {
+    if (isMobile) return 1;
+    if (isTablet || isSmallDesk) return 2;
+    return 3;
+  }
 
   return (
     <>
       {testimonials && (
         <Swiper
-        slidesPerView={isMobile ? 1 : 3}
-        spaceBetween={isMobile? 10 : 0}
+        slidesPerView={getSlidesPerview()}
+        spaceBetween={isMobile? 15 : 30}
         pagination={{
           dynamicBullets: true,
         }}
         navigation={true}
         loop={true}
         grabCursor={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-          modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
+        // autoplay={{
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // }}
+          modules={[Pagination, Navigation, Autoplay]}
           className='mySwiper'
+          // style={{padding: `${isMobile ? '0px' : '20px 35px'}`}}
         >
         {testimonials &&
           testimonials.map(({ feedback, name, profession }, index) => (
@@ -43,6 +52,7 @@ function Carousel({ testimonials, isMobile }: Props) {
                 name={name}
                 profession={profession}
                 isMobile={isMobile}
+                // marginLeft={isMobile ? '35px' : isTablet ? '50px' : '0px'}
               />
             </SwiperSlide>
           ))}

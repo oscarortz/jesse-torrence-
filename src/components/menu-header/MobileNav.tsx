@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import './menuHeader.css'
 import { Section } from '@/types/data.type';
 import CloseIcon from './CloseIcon';
@@ -15,10 +15,11 @@ type Props = {
   onCloseClick: () => void;
 }
 
-function MobileNav({ sections, activeSection, handleLinkClick, lang, updateLang, onCloseClick, isHomeSection }: Props) {
+const MobileNav = forwardRef<HTMLDivElement, Props>(
+  ({ sections, activeSection, handleLinkClick, lang, updateLang, onCloseClick, isHomeSection }, ref) => {
 
   return (
-    <div className={`${isHomeSection ? 'nav-mobile' : 'nav-mobile-position'}`}>
+    <div ref={ref} className={`${isHomeSection ? 'nav-mobile' : 'nav-mobile-position'}`}>
       <div className='icon-container'>
         <CloseIcon size='40px' onCloseClick={onCloseClick}/>
       </div>
@@ -27,6 +28,6 @@ function MobileNav({ sections, activeSection, handleLinkClick, lang, updateLang,
       </div>
     </div>
   )
-}
+})
 
 export default MobileNav

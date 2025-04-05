@@ -1,14 +1,22 @@
 "use client";
-import useDeviceType, { DeviceType } from "@/hooks/useDeviceType";
+import useDeviceType, { DeviceTypes } from "@/hooks/useDeviceType";
 import { createContext, useContext, type ReactNode } from "react";
 
-const DeviceContext = createContext<DeviceType>("desktop");
+const DeviceContext = createContext<DeviceTypes>({
+  device: "desktop",
+  deviceWidth: undefined,
+});
 
 export const useDevice = () => useContext(DeviceContext);
 
 export const DeviceProvider = ({ children }: { children: ReactNode }) => {
 
-  const device = useDeviceType()
+  const { device, deviceWidth } = useDeviceType()
 
-  return <DeviceContext.Provider value={device}>{children}</DeviceContext.Provider>;
+  const value = {
+    device,
+    deviceWidth
+  }
+
+  return <DeviceContext.Provider value={value}>{children}</DeviceContext.Provider>;
 };

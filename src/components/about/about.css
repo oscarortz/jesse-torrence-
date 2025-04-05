@@ -32,19 +32,40 @@
   flex-direction: column;
   height: 100%;
   max-width: 600px;
-  padding: 5px;
+
+  p {
+    height: 100%;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: justify;
+    text-wrap-style: pretty;
+  }
 }
 
-.description-container > p {
-  height: 100%;
+.description-container-tablet {
+  font-family: Inter;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-  font-size: 16px;
-  font-weight: 400;
-  text-align: justify;
-  text-wrap-style: pretty;
+  height: 100%;
+  max-width: 600px;
+  padding: 5px;
+
+  p {
+    height: 100%;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: justify;
+    text-wrap-style: pretty;
+  }
 }
+
 
 .imagen-container {
   display: flex;

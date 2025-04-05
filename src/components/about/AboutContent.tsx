@@ -26,7 +26,7 @@ function AboutContent({ about, isMobile, isTablet }: Props) {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         {about && <img src={getImage()} alt={about.name}/>}
       </div>
-      <div className='description-container'>
+      <div className={isTablet ? 'description-container-tablet' :'description-container'}>
         {description && description.map((item, index) => (
           <p key={index}>
             {item}

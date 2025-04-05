@@ -14,6 +14,16 @@ export default function useObserver(options: IntersectionObserverInit) {
 
     observer.current = new IntersectionObserver((observedEntries) => {
       setEntries(observedEntries);
+
+      observedEntries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+
+          if (el.scrollHeight > el.clientHeight) {
+            el.scrollTo({ top: 0, behavior: 'instant' });
+          }
+        }
+      });
     }, options);
 
     const currentObserver = observer.current;
@@ -37,3 +47,4 @@ export default function useObserver(options: IntersectionObserverInit) {
     IntersectionObserverEntry[]
   ];
 }
+
