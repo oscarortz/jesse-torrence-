@@ -23,7 +23,7 @@ const URL = '/data.json'
 export default function Home () {
   const [activeSection, setActiveSection] = useState('');
   const [isMenuMobilOpen, setIsMenuMobileOpen] = useState(false);
-  const { lang } = useLanguage();
+  const { lang, userLanguage } = useLanguage();
   const [dataPerLang, setDataPerLang] = useState<LanguageContent>();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [observer, setElements, entries] = useObserver({ threshold: 0.35, root: null });
@@ -46,7 +46,7 @@ export default function Home () {
 
   useEffect(() => {
     if (!data) return; 
-    setDataPerLang(lang === 'en' ? data.en : data.es);
+    setDataPerLang(userLanguage === 'en' ? data.en : data.es);
   }, [lang, data]);
 
   useEffect(() => {
