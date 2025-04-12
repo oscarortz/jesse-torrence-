@@ -83,8 +83,8 @@ export default function Home () {
 
         {activeSection !== 'home' && activeSection !== '#home' ? <MenuHeader toggleMenuState={toggleMenuMobile} size='25px' color={'#168F34'} isFloatMenu/> : <></>}
 
-        <Section id='about' bgColor='#fff'>
-          <div className={isMobile ? 'about-container-movile' : isTablet ? 'about-container-tablet' : 'about-container'}>
+        <Section id='about' bgColor='#fff' marginTop={'100px'}>
+          <div className={isMobile ? 'about-container-movile' : isTablet ? 'about-container-tablet' : 'about-container'} style={{marginTop: `${isMobile ? '0px' : '70px'}`}}>
             {!isMobile && <h4 className='about-header-little-message'>{dataPerLang?.about?.littleMessage}</h4>}
             <h2 className='about-header'>{dataPerLang?.about?.header}</h2>
             <AboutContent about={dataPerLang?.about} isMobile={isMobile} isTablet={isTablet}/>

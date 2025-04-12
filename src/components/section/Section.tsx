@@ -15,9 +15,10 @@ interface Props {
   overflowY?: CSSProperties['overflowY'];
   height?: string;
   marginBottom?: CSSProperties['marginBottom']
+  marginTop?: CSSProperties['marginTop']
 }
 
-function Section({children, bgImage, id, bgColor, bgPosition = 'top', padding = '10px', justifyContent = 'center', overflow, overflowY, height, flexDirection, marginBottom }: Props) {
+function Section({children, bgImage, id, bgColor, bgPosition = 'top', padding = '10px', justifyContent = 'center', overflow, overflowY, height, flexDirection, marginBottom, marginTop }: Props) {
   const backgroundImage = bgImage
   ? `url(${typeof bgImage === 'string' ? bgImage : bgImage.src})`
   : 'none';
@@ -41,6 +42,7 @@ function Section({children, bgImage, id, bgColor, bgPosition = 'top', padding = 
         flexDirection,
         overflowY,
         marginBottom,
+        marginTop,
       }}
     >
       {children}
