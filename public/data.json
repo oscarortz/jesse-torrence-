@@ -1,6 +1,7 @@
 {
   "es": {
-    "sections": [  {
+    "sections": [
+    {
       "title": "Bienvenidos",
       "href": "#home" 
     },
@@ -126,7 +127,8 @@
     }
   },
   "en": {
-    "sections": [  {
+    "sections": [
+    {
       "title": "Home",
       "href": "#home" 
     },
