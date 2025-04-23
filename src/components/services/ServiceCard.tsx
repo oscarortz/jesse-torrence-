@@ -10,24 +10,37 @@ type Props = {
 }
 
 function ServiceCard ({ service, style, isMobile, isTablet, smallDesktop }: Props) {
+  // return (
+  //   <div className={
+  //     isMobile 
+  //     ? 'service-card-container-movil' 
+  //     : isTablet 
+  //     ? 'service-card-container-tablet' 
+  //     : smallDesktop 
+  //     ? 'service-card-container-small-desk' 
+  //     : 'service-card-container'
+  //     } 
+  //     style={style}
+  //   >
+  //   <div className={`${isMobile ? 'service-image-container-movile' : isTablet ? 'service-image-container-tablet' : 'service-image-container'}`}>
+  //     <img src={service.image} alt='image about my services' />
+  //   </div>
+  //   <div className={`${isMobile ? 'service-content-container-movil' : isTablet ? 'service-content-container-tablet' : 'service-content-container'}`}>
+  //     <h4>{service.title}</h4>
+  //     <div className='service-description-container'>
+  //       <p>{service.description}</p>
+  //     </div>
+  //   </div>
+  // </div>
+  // )
   return (
-    <div className={
-      isMobile 
-      ? 'service-card-container-movil' 
-      : isTablet 
-      ? 'service-card-container-tablet' 
-      : smallDesktop 
-      ? 'service-card-container-small-desk' 
-      : 'service-card-container'
-      } 
-      style={style}
-    >
-    <div className={`${isMobile ? 'service-image-container-movile' : isTablet ? 'service-image-container-tablet' : 'service-image-container'}`}>
-      <img src={service.image} alt='image about my services' />
+    <div className={`service-card-wrapper ${isMobile ? 'service-card-wrapper-mobile' : ''}`}>
+    <div className='service-image-container'>
+      <img src={service.image} alt='image about my services' width={400} height={250}/>
     </div>
-    <div className={`${isMobile ? 'service-content-container-movil' : isTablet ? 'service-content-container-tablet' : 'service-content-container'}`}>
+    <div className='service-wrapper-content'>
       <h4>{service.title}</h4>
-      <div className='service-description-container'>
+      <div className='service-content'>
         <p>{service.description}</p>
       </div>
     </div>

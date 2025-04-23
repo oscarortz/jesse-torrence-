@@ -92,7 +92,7 @@ export default function Home () {
         </Section>
   
         <Section id='services' bgColor='#A1B88E' padding={isMobile ? '0px' : '30px 10px'}>
-          <div className={isMobile ? 'services-container-movil' : isTablet ? 'services-container-tablet' : 'services-container'}>
+          <div className={isMobile ? 'services-container-movil' : isTablet ? 'services-container-tablet' : 'services-container'}  style={{marginTop: `${isMobile ? '0px' : '70px'}`}}>
             <h4 className={`${isMobile ? 'service-header-little-message-movile' : 'service-header-little-message'}`}>{dataPerLang?.services?.littleMessage}</h4>
             <h2 className={`${isMobile ? 'service-header-movile' : 'service-header'}`}>{dataPerLang?.services?.header}</h2>
             <div className={`${isMobile ? 'page-services-card-container-movile' : isTablet ? 'page-services-card-container-tablet' : 'page-services-card-container'}`}>
