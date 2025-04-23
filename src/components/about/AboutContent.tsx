@@ -11,35 +11,43 @@ type Props = {
 
 function AboutContent({ about, isMobile, isTablet }: Props) {
 
-  const getImage = () => {
+  const getImageWidth = () => {
     if (!about) return;
-    const { image_movil, image_tablet, image_web } = about;
-    if (isMobile) return image_movil;
-    if (isTablet) return image_tablet;
-    return image_web
+    if (isMobile) return 300;
+    if (isTablet) return 350;
+    return 450;
+  }
+  const getImageHeight = () => {
+    if (!about) return;
+    if (isMobile) return 340;
+    if (isTablet) return 500;
+    return 600;
   }
 
   const description = useMemo(() => getSeparateText({text:about?.description}), [about])
-  return (
-    <div className={`${isMobile ? 'description-card-movile': 'description-card'}`}>
-      <div className={`${isMobile ? 'imagen-container-movil': isTablet ? 'image-container-tablet' : 'imagen-container'}`}>
+  
+    return (
+    <div className={`description-card ${isMobile ? 'description-card-mobile' : ''}`}>
+      <div className='imagen-container'>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        {about && <img src={getImage()} alt={about.name}/>}
+        {about && <img src={about?.image_web} alt={about.name} width={getImageWidth()} height={getImageHeight()}/>}
       </div>
-      <div className={isTablet ? 'description-container-tablet' :'description-container'}>
-        {description && description.map((item, index) => (
-          <p key={index}>
-            {item}
-            <br />
-            <br />
-          </p>
-          ))}
-        <div className={`${isMobile ? 'recognitions-container-movil' : 'recognitions-container'}`}>
+      <div className={`description-container ${isMobile ? 'description-container-mobile' : ''}`}>
+        <div className='description-content'>
+          {description && description.map((item, index) => (
+            <p key={index}>
+              {item}
+              <br />
+              <br />
+            </p>
+            ))}
+        </div>
+        <div className='recognitions-container'>
         {about && about.recognitions.map((img, index) => {
           return (
-            <div className={isMobile ? 'recognition-movil' : isTablet ? 'recognition-tablet' : 'recognition'} key={index}>
+            <div className='recognitions' key={index}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img} alt={'recognitions'} />
+              <img src={img} alt={'recognitions'}/>
             </div>
           )
         })}
