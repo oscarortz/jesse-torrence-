@@ -23,7 +23,7 @@ const URL = '/data.json'
 export default function Home () {
   const [activeSection, setActiveSection] = useState('');
   const [isMenuMobilOpen, setIsMenuMobileOpen] = useState(false);
-  const { lang, userLanguage } = useLanguage();
+  const { lang } = useLanguage();
   const [dataPerLang, setDataPerLang] = useState<LanguageContent>();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [observer, setElements, entries] = useObserver({ threshold: 0.35, root: null });
@@ -46,7 +46,7 @@ export default function Home () {
 
   useEffect(() => {
     if (!data) return; 
-    setDataPerLang(userLanguage === 'en' ? data.en : data.es);
+    setDataPerLang(lang === 'en' ? data.en : data.es);
   }, [lang, data]);
 
   useEffect(() => {
@@ -84,18 +84,18 @@ export default function Home () {
         {activeSection !== 'home' && activeSection !== '#home' ? <MenuHeader toggleMenuState={toggleMenuMobile} size='25px' color={'#168F34'} isFloatMenu/> : <></>}
 
         <Section id='about' bgColor='#fff' marginTop={'100px'}>
-          <div className={isMobile ? 'about-container-movile' : isTablet ? 'about-container-tablet' : 'about-container'} style={{marginTop: `${isMobile ? '0px' : '70px'}`}}>
+          <div className={isMobile ? 'about-container-movile' : isTablet ? 'about-container-tablet' : 'about-container'} style={{marginTop: `${isMobile ? '0px' : '100px'}`}}>
             {!isMobile && <h4 className='about-header-little-message'>{dataPerLang?.about?.littleMessage}</h4>}
             <h2 className='about-header'>{dataPerLang?.about?.header}</h2>
             <AboutContent about={dataPerLang?.about} isMobile={isMobile} isTablet={isTablet}/>
           </div>
         </Section>
   
-        <Section id='services' bgColor='#A1B88E' padding={isMobile ? '0px' : '30px 10px'}>
-          <div className={isMobile ? 'services-container-movil' : isTablet ? 'services-container-tablet' : 'services-container'}  style={{marginTop: `${isMobile ? '0px' : '70px'}`}}>
-            <h4 className={`${isMobile ? 'service-header-little-message-movile' : 'service-header-little-message'}`}>{dataPerLang?.services?.littleMessage}</h4>
-            <h2 className={`${isMobile ? 'service-header-movile' : 'service-header'}`}>{dataPerLang?.services?.header}</h2>
-            <div className={`${isMobile ? 'page-services-card-container-movile' : isTablet ? 'page-services-card-container-tablet' : 'page-services-card-container'}`}>
+        <Section id='services' bgColor='#A1B88E' padding={isMobile ? '10px 10px 0px 10px' : '30px 20px'}>
+          <div className={isMobile ? 'services-container-mobile' : isTablet ? 'services-container-tablet' : 'services-container'}  style={{marginTop: `${isMobile ? '0px' : '100px'}`}}>
+            <h4 className={`${isMobile ? 'service-header-little-message-mobile' : 'service-header-little-message'}`}>{dataPerLang?.services?.littleMessage}</h4>
+            <h2 className={`${isMobile ? 'service-header-mobile' : 'service-header'}`}>{dataPerLang?.services?.header}</h2>
+            <div className={`${isMobile ? 'page-services-card-container-mobile' : isTablet ? 'page-services-card-container-tablet' : 'page-services-card-container'}`}>
               {dataPerLang?.services?.services.map((service, index) => (
                 <ServiceCard key={index} service={service} style={isMobile ? movilStyles : undefined} isMobile={isMobile} isTablet={isTablet} smallDesktop={isSmallDesk}/>
               ))}
@@ -103,16 +103,16 @@ export default function Home () {
           </div>
         </Section>
 
-        <Section id='testimonials' bgColor='#fff'>
-          <h4 className={`${isMobile ? 'testimonial-little-message-movil' : 'testimonial-little-message'}`}>{dataPerLang?.testimonials?.littleMessage}</h4>
-          <h2 className={`${isMobile ? 'testimonial-title-movil' : 'testimonial-title'}`}>{dataPerLang?.testimonials?.header}</h2>
-          <div className={`${isMobile ? 'testimonial-container-carousel-movil' : 'testimonial-container-carousel'}`}>
+        <Section id='testimonials' bgColor='#fff' padding={isMobile ? '20px 0px 10px 0px' : ''}>
+          <h4 className={`${isMobile ? 'testimonial-little-message-mobile' : 'testimonial-little-message'}`}>{dataPerLang?.testimonials?.littleMessage}</h4>
+          <h2 className={`${isMobile ? 'testimonial-title-mobile' : 'testimonial-title'}`}>{dataPerLang?.testimonials?.header}</h2>
+          <div className={`${isMobile ? 'testimonial-container-carousel-mobile' : 'testimonial-container-carousel'}`}>
             <Carousel testimonials={dataPerLang?.testimonials?.testimonials} isMobile={isMobile} isTablet={isTablet} isSmallDesk={isSmallDesk}/>
           </div>
         </Section>
 
         <Section id='contact' bgColor='#A1B88E' padding={isMobile ? '20px' : ''} justifyContent={!isMobile ? 'center' : 'normal'}>
-          <div className={`${isMobile ? 'contact-header-container-movil' : 'contact-header-container'}`}>
+          <div className={`${isMobile ? 'contact-header-container-mobile' : 'contact-header-container'}`}>
             {lang === 'es' && !isMobile && <h4>{dataPerLang?.contact?.littleMessage}</h4>}
             {lang === 'es' && !isMobile && <h2>{dataPerLang?.contact?.header}</h2>}
             {isMobile && <h2>{dataPerLang?.contact?.title}</h2>}

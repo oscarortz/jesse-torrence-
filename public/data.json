@@ -24,7 +24,7 @@
   ],
     "home": {
       "key": "home",
-      "title": "Define tu vision del éxito\n y libera tu poder.",
+      "title": "Empoderando a líderes emergentes\n para liderar con claridad y propósito.",
       "image": "/images/background-home.webp"
     },
     "about": {
@@ -32,13 +32,14 @@
       "name": "Carla Larangueria",
       "header": "Acerca de",
       "littleMessage": "Hola",
-      "description": "Soy coach de liderazgo ejecutivo y de vida para líderes emergentes que desean liderar con autenticidad y generar impacto. Con 20 años de experiencia profesional global en investigación de negocios, finanzas e industrias estratégicas, tengo la capacidad de evaluar contextos en evolución desde múltiples perspectivas. Guío a ejecutivos y fundadores de empresas en el desarrollo de la autoconciencia y la construcción de su propia definición de éxito, permitiéndoles tomar decisiones más impactantes en sus vidas personales y profesionales, salir de los 'modos predeterminados' y generar un cambio sostenible.\n También soy investigadora senior en el Centro de Investigación de América Latina de la Escuela de Negocios de Harvard, donde co-desarrollo varios estudios de caso sobre las principales empresas de la región, aprendiendo de primera mano de sus ejecutivos de alto nivel y fundadores pioneros. Su compromiso con la búsqueda de una visión transformadora para sus industrias me ha motivado a profundizar en los caminos de los líderes emergentes a nivel global.\n Mi círculo cercano me describe como una gran oyente, con una mentalidad abierta, sin juicios y equilibrada. Originaria de Brasil y con más de dos décadas de experiencia como expatriada en México y Estados Unidos, conecto fácilmente con profesionales que, como yo, tienen un apetito por salir de su zona de confort y poseen una mentalidad global.",
+      "description": "Soy coach de liderazgo ejecutivo y de vida para líderes emergentes que desean liderar con autenticidad y generar impacto. Con 20 años de experiencia profesional global en investigación de negocios, finanzas y estrategia, tengo la capacidad de evaluar contextos en evolución desde múltiples perspectivas. Guío a ejecutivos y fundadores de empresas en el desarrollo de la autoconciencia y la construcción de su propia definición de éxito, permitiéndoles tomar decisiones más impactantes en sus vidas personales y profesionales, salir de los 'modos predeterminados' y generar un cambio sostenible.\n También soy investigadora senior en el Centro de Investigación de América Latina de la Escuela de Negocios de Harvard, donde co-desarrollo varios estudios de caso sobre las principales empresas de la región, aprendiendo de primera mano de sus ejecutivos de alto nivel y fundadores pioneros. Su compromiso con la búsqueda de una visión transformadora para sus industrias me ha motivado a profundizar en los caminos de los líderes emergentes a nivel global.\n Mi círculo cercano me describe como una gran oyente, con una mentalidad abierta, sin juicios y equilibrada. Originaria de Brasil y con más de dos décadas de experiencia como expatriada en México y Estados Unidos, conecto fácilmente con profesionales que, como yo, tienen un apetito por salir de su zona de confort y poseen una mentalidad global.",
       "image_movil": "/images/carla-movil.webp",
       "image_tablet": "/images/carla-tablet.webp",
       "image_web": "/images/carla-web.webp",
       "recognitions": [
         "/images/Badge-Coaching01.webp",
-        "/images/Badge-Coaching02.webp"
+        "/images/Badge-Coaching02.webp",
+        "/images/Badge-Coaching03.webp"
       ]
     },
     "services": {
@@ -48,7 +49,7 @@
       "services": [
       {
         "title": "Coaching Empresarial y de Liderazgo",
-        "description": "A través de una serie de sesiones de coaching altamente personalizadas, facilito el crecimiento profesional y personal de mis clientes, así como el desarrollo organizacional. Aprovechando mi experiencia internacional y en múltiples industrias, así como mi conocimiento en la toma de decisiones a nivel ejecutivo (C-suite), me enfoco en una transformación ejecutiva profunda y significativa, en lugar de soluciones rápidas, y proporciono sabiduría práctica para apoyarte en tu camino. Como tu coach, seré tu caja de resonancia y socio de pensamiento, te ayudaré a establecer objetivos claros e identificar y desarrollar habilidades de liderazgo para impulsar el crecimiento individual y organizacional.",
+        "description": "A través de una serie de sesiones de coaching altamente personalizadas, facilito el crecimiento profesional y personal de mis clientes, así como el desarrollo organizacional. Aprovechando mi experiencia internacional y en múltiples industrias, así como mi conocimiento en la toma de decisiones a nivel ejecutivo (C-suite), me enfoco en una transformación ejecutiva profunda y significativa, en lugar de soluciones rápidas, y proporciono sabiduría práctica para apoyarte en tu camino. Como tu coach, seré tu <i>“sounding board”</i> y <i>“thought partner”</i> , te ayudaré a establecer objetivos claros e identificar y desarrollar habilidades de liderazgo para impulsar el crecimiento individual y organizacional.",
         "image": "/images/service-01.webp"
       },
       {
@@ -59,18 +60,18 @@
     ]},
     "testimonials": { 
       "key": "testimonials",
-      "header": "Historias de éxito",
-      "littleMessage": "Testimonial",
+      "header": "Historias de Exito",
+      "littleMessage": "Testimonios",
       "testimonials": [
       {
         "name": "Leonardo Silva",
-        "profession": "Ejecutivo de finanzas",
+        "profession": "Ejecutivo de Finanzas",
         "feedback": "El coaching de Carla fue una experiencia transformadora desde la primera sesión. Su profundo conocimiento de las relaciones humanas y su capacidad para ofrecer nuevas perspectivas me ayudaron a identificar y cambiar comportamientos improductivos, lo que resultó en un crecimiento personal significativo. Su compromiso y orientación perspicaz hicieron que el proceso fuera tanto efectivo como enriquecedor, proporcionando resultados rápidamente.",
         "image": ""
       },
       {
         "name": "Diego Sierra",
-        "profession": "Experto jurídico, socio en un despacho de abogados",
+        "profession": "Experto Jurídico, Socio en un Despacho de Abogados",
         "feedback": "Mi experiencia con Carla como coach ha sido sumamente enriquecedora. Su capacidad para escuchar y comprender mis necesidades me permitió identificar y potenciar mis fortalezas, así como abordar áreas de mejora con confianza. Gracias a su orientación, he logrado una mayor claridad en mis objetivos y una notable mejora en mi desempeño profesional y mayor balance en mi vida personal y familiar. Recomiendo ampliamente sus servicios a quienes buscan un acompañamiento efectivo y transformador.",
         "image": ""
       },
@@ -82,7 +83,7 @@
       },
       {
         "name": "Ana Isabel Orvañanos",
-        "profession": "Ejecutiva del sector tech y emprendedora",
+        "profession": "Ejecutiva del Sector Tech y Emprendedora",
         "feedback": "Mi experiencia con Carla fue además de útil, muy inspiradora. Me ayudó a trabajar por objetivos de una manera muy estructurada y siempre con base en estudios o literatura de primer nivel. Me ayudó a trabajar en mis retos profesionales de manera estructurada, proactiva y constructiva, lo que me llevó a evolucionar en mi carrera profesional y fortalecer mi confianza",
         "image": ""
       }
@@ -93,7 +94,7 @@
       "title": "¡Platiquemos!",
       "littleMessage": "Platiquemos",
       "header": "Contacto",
-      "subtitle": "Déjame tu informacion y me pondré en contacto contigo lo antes posible.",
+      "subtitle": "Déjame tu información y me pondré en contacto contigo lo antes posible.",
       "contactText": "Reserva ahora",
       "contactLink": "/contacto",
       "inputs": [
@@ -115,14 +116,14 @@
           "type": "text",
           "placeholder": "www.you.com",
           "id": "website",
-          "label": "Website ó Linkedin",
+          "label": "Website ó LinkedIn",
           "isRequired": true
         }
       ],
       "textarea": {
         "placeholder": "Escribeme tus intereses",
         "id": "share_your_message",
-        "label": "Cuentame de ti"
+        "label": "Cuéntame de ti"
       }
     }
   },
@@ -151,21 +152,22 @@
   ],
     "home": {
       "key": "home",
-      "title": "Define your vision of succes and\n unleash your power.",
+      "title": "Empowering emerging leaders\n to drive transformation with\n clarity and purpose.",
       "image": "/images/background-home.webp"
     },
     "about": {
       "key": "about",
       "name": "Carla Larangueria",
-      "header": "About me",
+      "header": "About Me",
       "littleMessage": "Hello",
-      "description": "I am an executive leadership and life coach for emerging leaders who want to lead with authenticity and drive impact. With 20 years of global professional experience in business research, finance and strategy industries, I am apt at assessing evolving contexts from several perspectives. I guide company executives and founders towards building self-awareness and envisioning their definition of success, allowing them to make more impactful choices in their personal and professional lives, switch out of 'default modes,' and create sustainable change.\n  I am also a senior researcher at Harvard Business School’s Latin America Research Center, co-developing several case studies on the region’s leading companies, learning first-hand from its C-level executives and pioneer founders. Their commitment to pursuing a transformational vision for their industries have motivated me to dive deeper into the journeys of global emerging leaders. \n My close network describes me as a great listener with an open and non-judgmental mindset, and level-headed. Originally from Brazil and with over two decades of experience as an expat in Mexico and the U.S., I easily connect with professionals who like me, have an appetite for being outside their comfort zones and have a global mindset. ",
+      "description": "I am an executive leadership and life coach for emerging leaders who want to lead with authenticity and drive impact. With 20 years of global professional experience in business research, finance and strategy, I am apt at assessing evolving contexts from several perspectives. I guide company executives and founders towards building self-awareness and envisioning their definition of success, allowing them to make more impactful choices in their personal and professional lives, switch out of 'default modes,' and create sustainable change.\n  I am also a senior researcher at Harvard Business School’s Latin America Research Center, co-developing several case studies on the region’s leading companies, learning first-hand from its C-level executives and pioneer founders. Their commitment to pursuing a transformational vision for their industries have motivated me to dive deeper into the journeys of global emerging leaders. \n My close network describes me as a great listener with an open and non-judgmental mindset, and level-headed. Originally from Brazil and with over two decades of experience as an expat in Mexico and the U.S., I easily connect with professionals who like me, have an appetite for being outside their comfort zones and have a global mindset. ",
       "image_movil": "/images/carla-movil.webp",
       "image_tablet": "/images/carla-tablet.webp",
       "image_web": "/images/carla-web.webp",
       "recognitions": [
         "/images/Badge-Coaching01.webp",
-        "/images/Badge-Coaching02.webp"
+        "/images/Badge-Coaching02.webp",
+        "/images/Badge-Coaching03.webp"
       ]
     },
     "services": {
@@ -188,8 +190,8 @@
 ,
     "testimonials": {
       "key": "testimonials",
-      "header": "Client Success History",
-      "littleMessage": "Testimonial",
+      "header": "Client Success Stories",
+      "littleMessage": "Testimonials",
       "testimonials": [
       {
         "name": "Leonardo Silva",
@@ -199,7 +201,7 @@
       },
       {
         "name": "Diego Sierra",
-        "profession": "Legal expert, partner at a law firm",
+        "profession": "Legal Expert, Partner at a Law Firm",
         "feedback": "My experience with Carla as a coach has been extremely enriching. Her ability to listen and understand my needs allowed me to identify and enhance my strengths, as well as confidently address areas for improvement. Thanks to her guidance, I have achieved greater clarity in my goals, a notable improvement in my professional performance, and a better balance in my personal and family life. I highly recommend her services to those seeking effective and transformative support.",
         "image": ""
       },
@@ -211,7 +213,7 @@
       },
       {
         "name": "Ana Isabel Orvañanos",
-        "profession": "Tech executive and entrepreneur",
+        "profession": "Tech Executive and Entrepreneur",
         "feedback": "My experience with Carla was not only useful but also very inspiring. She helped me work towards my goals in a very structured way, always based on top-tier studies or literature. She supported me in tackling my professional challenges in a structured, proactive, and constructive manner, which led me to evolve in my career and strengthen my confidence.",
         "image": ""
       }
@@ -221,7 +223,7 @@
       "key": "contact",
       "title": "Let’s talk!",
       "littleMessage": "",
-      "subtitle": "Leave me your details and I will contact you soon",
+      "subtitle": "Please leave your contact information and I will reach out soon!",
       "contactText": "Book now",
       "contactLink": "/contact",
       "inputs": [
@@ -241,13 +243,13 @@
           "type": "text",
           "placeholder": "www.you.com",
           "id": "website",
-          "label": "Website Or Linkedin"
+          "label": "Website or LinkedIn"
         }
       ],
       "textarea": {
         "placeholder": "Tell me about your interest",
         "id": "Share_your_message",
-        "label": "Share Your Message"
+        "label": "Leave a message"
       }
     }
   }

@@ -13,13 +13,13 @@ function AboutContent({ about, isMobile, isTablet }: Props) {
 
   const getImageWidth = () => {
     if (!about) return;
-    if (isMobile) return 300;
+    if (isMobile) return 400;
     if (isTablet) return 350;
     return 450;
   }
   const getImageHeight = () => {
     if (!about) return;
-    if (isMobile) return 340;
+    if (isMobile) return 400;
     if (isTablet) return 500;
     return 600;
   }
@@ -28,12 +28,12 @@ function AboutContent({ about, isMobile, isTablet }: Props) {
   
     return (
     <div className={`description-card ${isMobile ? 'description-card-mobile' : ''}`}>
-      <div className='imagen-container'>
+      <div className={`imagen-container ${isMobile ? 'image-container-mobile' : ''}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         {about && <img src={about?.image_web} alt={about.name} width={getImageWidth()} height={getImageHeight()}/>}
       </div>
       <div className={`description-container ${isMobile ? 'description-container-mobile' : ''}`}>
-        <div className='description-content'>
+        <div className={`description-content ${isMobile ? 'description-content-mobile' : ''}`}>
           {description && description.map((item, index) => (
             <p key={index}>
               {item}
@@ -42,7 +42,7 @@ function AboutContent({ about, isMobile, isTablet }: Props) {
             </p>
             ))}
         </div>
-        <div className='recognitions-container'>
+        <div className={`recognitions-container ${isMobile ? 'recognitions-container-mobile' : ''}`}>
         {about && about.recognitions.map((img, index) => {
           return (
             <div className='recognitions' key={index}>

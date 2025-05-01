@@ -28,31 +28,29 @@ function Carousel({ testimonials, isMobile, isTablet, isSmallDesk }: Props) {
     <>
       {testimonials && (
         <Swiper
-        slidesPerView={getSlidesPerview()}
-        spaceBetween={isMobile? 15 : 30}
-        pagination={{
-          dynamicBullets: true,
-        }}
-        navigation={true}
-        loop={true}
-        grabCursor={true}
-        // autoplay={{
-        //   delay: 5000,
-        //   disableOnInteraction: false,
-        // }}
+          slidesPerView={getSlidesPerview()}
+          spaceBetween={isMobile? 15 : 30}
+          pagination={{
+            dynamicBullets: true,
+          }}
+          navigation={true}
+          loop={true}
+          grabCursor={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
           modules={[Pagination, Navigation, Autoplay]}
           className='mySwiper'
-          // style={{padding: `${isMobile ? '0px' : '20px 35px'}`}}
         >
         {testimonials &&
           testimonials.map(({ feedback, name, profession }, index) => (
-            <SwiperSlide className='swiper' key={index}>
+            <SwiperSlide className='swiper' key={index} >
               <TestimonialCard
                 feedback={feedback}
                 name={name}
                 profession={profession}
                 isMobile={isMobile}
-                // marginLeft={isMobile ? '35px' : isTablet ? '50px' : '0px'}
               />
             </SwiperSlide>
           ))}

@@ -30,4 +30,6 @@ const MobileNav = forwardRef<HTMLDivElement, Props>(
   )
 })
 
+MobileNav.displayName = "MobileNav";
+
 export default MobileNav

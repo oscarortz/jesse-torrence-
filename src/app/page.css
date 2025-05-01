@@ -1,16 +1,22 @@
 /*** Estilo para Home Section */
 .home-message {
-  width: clamp(80%, 65%, 50%);
-}
-
-.home-message > h2 {
-  color: #fff;
-  font-family: Instrument Sans;
-  font-weight: 400;
-  font-size: clamp(30px, 50px ,50px);
-  line-height: 100%;
-  letter-spacing: normal;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  
+  & h2 {
+    color: #fff;
+    font-family: Instrument Sans;
+    font-weight: 400;
+    font-size: clamp(25px, 50px, 10vw);
+    line-height: 55px;
+    width: clac(100% - 10vw);
+    white-space: normal;
+    letter-spacing: normal;
+    text-align: center;
+  }
 }
 /*** Estilo para Home Section */
 
@@ -23,7 +29,7 @@
   line-height: 100%;
   letter-spacing: normal;
   text-align: center;
-  padding-bottom: var(--padding-bottom);
+  padding-bottom: 30px;
 }
 
 .about-header-little-message {
@@ -85,17 +91,17 @@
   flex-direction: column;
 }
 
-.services-container-movil {
+.services-container-mobile {
   overflow-y: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
-.page-services-card-container-movile {
+.page-services-card-container-mobile {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -131,14 +137,14 @@
   padding-bottom: var(--padding-bottom);
 }
 
-.service-header-movile {
+.service-header-mobile {
   font-family: Inter;
   font-weight: 700;
   font-size: 25px;
   line-height: 100%;
   text-align: center;
   color: white;
-  padding-bottom: var(--padding-bottom-small);
+  padding-bottom: 30px;
 }
 
 .service-header-little-message {
@@ -152,7 +158,7 @@
   padding-bottom:  var(--padding-bottom-small);
 }
 
-.service-header-little-message-movile {
+.service-header-little-message-mobile {
   font-family: Inter;
   font-weight: 500;
   font-size: 12px;
@@ -176,30 +182,30 @@
   font-weight: 700;
   font-size: 48px;
   line-height: 60px;
-  letter-spacing: 0%;
   text-align: center;
   padding-bottom: var(--padding-bottom);
 }
 
-.testimonial-title-movil {
+.testimonial-title-mobile {
   font-family: Inter;
   font-weight: 700;
   font-size: 25px;
   line-height: 100%;
   text-align: center;
-  padding-bottom: var(--padding-bottom);
+  padding-bottom: 10px;
 }
 
 .testimonial-container-carousel {
   display: flex;
   align-items: center;
+  padding: 0px 10px;
   justify-content: center;
   max-width: 100%;
   min-height: 50%;
   max-height: 90%;
 }
 
-.testimonial-container-carousel-movil {
+.testimonial-container-carousel-mobile {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -212,24 +218,21 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 6%;
   text-align: center;
   text-transform: uppercase;
   color: #4A8158;
   padding-bottom: var(--padding-bottom-small);
 }
 
-.testimonial-little-message-movil {
+.testimonial-little-message-mobile {
   font-family: Inter;
   font-weight: 500;
   font-size: 12px;
   line-height: 20px;
-  letter-spacing: 6%;
   text-align: center;
   text-transform: uppercase;
   color: #4A8158;
-  padding-top: 15px;
-  padding-bottom: var(--padding-bottom-small);
+  padding-bottom: 10px;
 }
 /*** Estilo para Testimonial Section */
 
@@ -272,12 +275,13 @@
     text-align: center;
     vertical-align: middle;
     color: white;
+    text-transform: uppercase;
     padding-bottom: var(--padding-bottom-small);
   }
 
 }
 
-.contact-header-container-movil {
+.contact-header-container-mobile {
   display: flex;
   flex-direction: column;
   align-items: center;
