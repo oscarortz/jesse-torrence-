@@ -1,5 +1,4 @@
 import './header.css'
-import Link from 'next/link';
 import { useLanguage } from '@/hooks/useLanguage';
 import HeaderLogo from '../svg-components/HeaderLogo';
 import { Section } from '@/types/data.type';

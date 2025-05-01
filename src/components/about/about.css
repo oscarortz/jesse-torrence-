@@ -18,20 +18,25 @@
     }
   }
 
+  .image-container-mobile {
+    width: 100%;
+  }
+
   & .description-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    width: clamp(400px, 460px, 100%);
+    width: clamp(400px, 500px, 100%);
     
     & .description-content {
       height: 100%;
 
       & p {
+        font-family: inter;
         display: flex;
         flex-direction: column;
-        font-size: clamp(14px, 1.5vw, 16px);
+        font-size: clamp(14px, 1.4vw, 16px);
         font-weight: 400;
         text-align: left;
         text-wrap-style: pretty;
@@ -65,8 +70,18 @@
   flex-direction: column;
 }
 
-
 .description-container-mobile {
   width: 100%!important;
+}
+
+.recognitions-container-mobile {
+  justify-content: space-between!important;
+  width: 100%!important;
+}
+
+.description-content-mobile {
+  & p {
+    text-align: center!important;
+  }
 }
   
