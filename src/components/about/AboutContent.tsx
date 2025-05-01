@@ -7,20 +7,23 @@ type Props = {
   about: AboutSection | undefined;
   isMobile: boolean;
   isTablet: boolean;
+  isSmallDesk: boolean;
 }
 
-function AboutContent({ about, isMobile, isTablet }: Props) {
+function AboutContent({ about, isMobile, isTablet, isSmallDesk }: Props) {
 
   const getImageWidth = () => {
     if (!about) return;
     if (isMobile) return 400;
     if (isTablet) return 350;
+    if (isSmallDesk) return 380;
     return 450;
   }
   const getImageHeight = () => {
     if (!about) return;
     if (isMobile) return 400;
     if (isTablet) return 500;
+    if (isSmallDesk) return 520;
     return 600;
   }
 

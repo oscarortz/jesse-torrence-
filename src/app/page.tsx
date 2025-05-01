@@ -87,7 +87,7 @@ export default function Home () {
           <div className={isMobile ? 'about-container-movile' : isTablet ? 'about-container-tablet' : 'about-container'} style={{marginTop: `${isMobile ? '0px' : '100px'}`}}>
             {!isMobile && <h4 className='about-header-little-message'>{dataPerLang?.about?.littleMessage}</h4>}
             <h2 className='about-header'>{dataPerLang?.about?.header}</h2>
-            <AboutContent about={dataPerLang?.about} isMobile={isMobile} isTablet={isTablet}/>
+            <AboutContent about={dataPerLang?.about} isMobile={isMobile} isTablet={isTablet} isSmallDesk={isSmallDesk}/>
           </div>
         </Section>
   
@@ -97,13 +97,13 @@ export default function Home () {
             <h2 className={`${isMobile ? 'service-header-mobile' : 'service-header'}`}>{dataPerLang?.services?.header}</h2>
             <div className={`${isMobile ? 'page-services-card-container-mobile' : isTablet ? 'page-services-card-container-tablet' : 'page-services-card-container'}`}>
               {dataPerLang?.services?.services.map((service, index) => (
-                <ServiceCard key={index} service={service} style={isMobile ? movilStyles : undefined} isMobile={isMobile} isTablet={isTablet} smallDesktop={isSmallDesk}/>
+                <ServiceCard key={index} service={service} style={isMobile ? movilStyles : undefined} isMobile={isMobile} isTablet={isTablet} isSmallDesktop={isSmallDesk}/>
               ))}
             </div>
           </div>
         </Section>
 
-        <Section id='testimonials' bgColor='#fff' padding={isMobile ? '20px 0px 10px 0px' : ''}>
+        <Section id='testimonials' bgColor='#fff' padding={isMobile ? '20px 0px 10px 0px' : ''} paddingTop={isSmallDesk ? '100px' : ''}>
           <h4 className={`${isMobile ? 'testimonial-little-message-mobile' : 'testimonial-little-message'}`}>{dataPerLang?.testimonials?.littleMessage}</h4>
           <h2 className={`${isMobile ? 'testimonial-title-mobile' : 'testimonial-title'}`}>{dataPerLang?.testimonials?.header}</h2>
           <div className={`${isMobile ? 'testimonial-container-carousel-mobile' : 'testimonial-container-carousel'}`}>
@@ -111,7 +111,7 @@ export default function Home () {
           </div>
         </Section>
 
-        <Section id='contact' bgColor='#A1B88E' padding={isMobile ? '20px' : ''} justifyContent={!isMobile ? 'center' : 'normal'}>
+        <Section id='contact' bgColor='#A1B88E' padding={isMobile ? '30px 20px 20px 20px' : ''} justifyContent={!isMobile ? 'center' : 'normal'} paddingTop='25px'>
           <div className={`${isMobile ? 'contact-header-container-mobile' : 'contact-header-container'}`}>
             {lang === 'es' && !isMobile && <h4>{dataPerLang?.contact?.littleMessage}</h4>}
             {lang === 'es' && !isMobile && <h2>{dataPerLang?.contact?.header}</h2>}

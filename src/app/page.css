@@ -10,16 +10,15 @@
     color: #fff;
     font-family: Instrument Sans;
     font-weight: 400;
-    font-size: clamp(25px, 50px, 10vw);
-    line-height: 55px;
-    width: clac(100% - 10vw);
+    font-size: clamp(25px, 7vw, 50px);
+    line-height: 50px;
+    width: calc(100% - 10vw);
     white-space: normal;
     letter-spacing: normal;
     text-align: center;
   }
 }
 /*** Estilo para Home Section */
-
 
 /*** Estilo para About Section */
 .about-header {

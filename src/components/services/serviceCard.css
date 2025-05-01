@@ -46,8 +46,8 @@
       & p {
         font-family: Inter;
         font-weight: 400;
-        font-size: clamp(14px, 15px, 1.5vw);
-        line-height: 18px;
+        font-size: clamp(14px, 1.2vw, 16px);
+        line-height: 20px;
         text-align: left;
       }
     }

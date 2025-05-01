@@ -36,7 +36,7 @@
         font-family: inter;
         display: flex;
         flex-direction: column;
-        font-size: clamp(14px, 1.4vw, 16px);
+        font-size: clamp(14px, 1.2vw, 16px);
         font-weight: 400;
         text-align: left;
         text-wrap-style: pretty;
