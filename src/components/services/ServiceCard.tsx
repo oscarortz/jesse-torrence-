@@ -7,13 +7,15 @@ type Props = {
   isMobile?: boolean;
   isTablet?: boolean;
   isSmallDesktop?: boolean;
+  isSmallHeight?: boolean;
 }
 
-function ServiceCard ({ service, isMobile, isTablet, isSmallDesktop }: Props) {
+function ServiceCard ({ service, isMobile, isTablet, isSmallDesktop, isSmallHeight }: Props) {
   const containsHTML = /<\/?[a-z][\s\S]*>/i.test(service.description);
 
   const getImageHeight = () => {
-    if (isSmallDesktop || isTablet) return 200;
+    if (!isSmallHeight && (isSmallDesktop || isTablet) ) return 200;
+    if (isSmallHeight) return 180;
     return 250;
   }
 
@@ -25,11 +27,9 @@ function ServiceCard ({ service, isMobile, isTablet, isSmallDesktop }: Props) {
     <div className={`service-wrapper-content ${isMobile ? 'service-wrapper-content-mobile' : ''}`}>
       <h4>{service.title}</h4>
       <div className={`service-content ${isMobile ? 'service-content-mobile' : ''}`}>
-      {
-        containsHTML 
+      {containsHTML 
         ? <p dangerouslySetInnerHTML={{ __html: service.description }} />
-        : <p>{service.description}</p>
-      }
+        : <p>{service.description}</p>}
       </div>
     </div>
   </div>

@@ -116,7 +116,7 @@
           "type": "text",
           "placeholder": "www.you.com",
           "id": "website",
-          "label": "Website ó LinkedIn",
+          "label": "Website o LinkedIn",
           "isRequired": true
         }
       ],

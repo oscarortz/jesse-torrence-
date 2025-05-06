@@ -36,10 +36,10 @@ function Carousel({ testimonials, isMobile, isTablet, isSmallDesk }: Props) {
           navigation={true}
           loop={true}
           grabCursor={true}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 5000,
+          //   disableOnInteraction: false,
+          // }}
           modules={[Pagination, Navigation, Autoplay]}
           className='mySwiper'
         >

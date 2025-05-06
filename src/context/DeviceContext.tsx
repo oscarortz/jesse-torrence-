@@ -5,17 +5,19 @@ import { createContext, useContext, type ReactNode } from "react";
 const DeviceContext = createContext<DeviceTypes>({
   device: "desktop",
   deviceWidth: undefined,
+  deviceHeight: "desktop"
 });
 
 export const useDevice = () => useContext(DeviceContext);
 
 export const DeviceProvider = ({ children }: { children: ReactNode }) => {
 
-  const { device, deviceWidth } = useDeviceType()
+  const { device, deviceWidth, deviceHeight } = useDeviceType()
 
   const value = {
     device,
-    deviceWidth
+    deviceWidth,
+    deviceHeight
   }
 
   return <DeviceContext.Provider value={value}>{children}</DeviceContext.Provider>;
