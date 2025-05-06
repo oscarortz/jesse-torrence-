@@ -3,7 +3,7 @@
   background-color: #fff;
   align-items: center;
   justify-content: center;
-  padding: min(20px, 3vw);
+  padding: min(18px, 2.7vw);
   padding-left: 50px;
   padding-right: 50px;
   border-radius: 33px;
@@ -46,8 +46,8 @@
       & p {
         font-family: Inter;
         font-weight: 400;
-        font-size: clamp(14px, 15px, 1.5vw);
-        line-height: 18px;
+        font-size: clamp(14px, 1.2vw, 15px);
+        line-height: 19px;
         text-align: left;
       }
     }

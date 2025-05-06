@@ -29,11 +29,12 @@ export default function Home () {
   const [observer, setElements, entries] = useObserver({ threshold: 0.35, root: null });
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { data, error, loading } = useFetch<Translations>(URL);
-  const { device } = useDevice();
+  const { device, deviceHeight } = useDevice();
   const isMobile = device === 'movil';
   const isTablet = device === 'tablet';
   const isSmallDesk = device === 'small-desktop';
   const isHomeSection = activeSection === 'home';
+  const isSmallScreenHeight = deviceHeight === 'small-desktop';
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -76,7 +77,7 @@ export default function Home () {
           isHomeSection={isHomeSection}
         />
         <Section id='home' bgImage={dataPerLang?.home?.image}>
-          <div className='home-message'>{homeMessage && homeMessage.map((message, index) => (
+          <div className={`home-message ${isMobile ? 'home-message-center' : ''}`}>{homeMessage && homeMessage.map((message, index) => (
             <h2 key={index}>{message}</h2>
           ))}</div>
         </Section>
@@ -87,7 +88,7 @@ export default function Home () {
           <div className={isMobile ? 'about-container-movile' : isTablet ? 'about-container-tablet' : 'about-container'} style={{marginTop: `${isMobile ? '0px' : '100px'}`}}>
             {!isMobile && <h4 className='about-header-little-message'>{dataPerLang?.about?.littleMessage}</h4>}
             <h2 className='about-header'>{dataPerLang?.about?.header}</h2>
-            <AboutContent about={dataPerLang?.about} isMobile={isMobile} isTablet={isTablet}/>
+            <AboutContent about={dataPerLang?.about} isMobile={isMobile} isTablet={isTablet} isSmallDesk={isSmallDesk} isSmallHeight={isSmallScreenHeight}/>
           </div>
         </Section>
   
@@ -97,13 +98,13 @@ export default function Home () {
             <h2 className={`${isMobile ? 'service-header-mobile' : 'service-header'}`}>{dataPerLang?.services?.header}</h2>
             <div className={`${isMobile ? 'page-services-card-container-mobile' : isTablet ? 'page-services-card-container-tablet' : 'page-services-card-container'}`}>
               {dataPerLang?.services?.services.map((service, index) => (
-                <ServiceCard key={index} service={service} style={isMobile ? movilStyles : undefined} isMobile={isMobile} isTablet={isTablet} smallDesktop={isSmallDesk}/>
+                <ServiceCard key={index} service={service} style={isMobile ? movilStyles : undefined} isMobile={isMobile} isTablet={isTablet} isSmallDesktop={isSmallDesk} isSmallHeight={isSmallScreenHeight}/>
               ))}
             </div>
           </div>
         </Section>
 
-        <Section id='testimonials' bgColor='#fff' padding={isMobile ? '20px 0px 10px 0px' : ''}>
+        <Section id='testimonials' bgColor='#fff' padding={isMobile ? '10px 0px 10px 0px' : `${isSmallScreenHeight ? '100px' : '0px'} 0px 10px 0px`}>
           <h4 className={`${isMobile ? 'testimonial-little-message-mobile' : 'testimonial-little-message'}`}>{dataPerLang?.testimonials?.littleMessage}</h4>
           <h2 className={`${isMobile ? 'testimonial-title-mobile' : 'testimonial-title'}`}>{dataPerLang?.testimonials?.header}</h2>
           <div className={`${isMobile ? 'testimonial-container-carousel-mobile' : 'testimonial-container-carousel'}`}>
@@ -111,7 +112,7 @@ export default function Home () {
           </div>
         </Section>
 
-        <Section id='contact' bgColor='#A1B88E' padding={isMobile ? '20px' : ''} justifyContent={!isMobile ? 'center' : 'normal'}>
+        <Section id='contact' bgColor='#A1B88E' padding={isMobile ? '25px 20px 20px 20px' : '0px 0px 30px 0px'} justifyContent={!isMobile && !isSmallScreenHeight ? 'center' : ( isSmallScreenHeight && !isMobile) ? 'flex-end' : 'normal'}>
           <div className={`${isMobile ? 'contact-header-container-mobile' : 'contact-header-container'}`}>
             {lang === 'es' && !isMobile && <h4>{dataPerLang?.contact?.littleMessage}</h4>}
             {lang === 'es' && !isMobile && <h2>{dataPerLang?.contact?.header}</h2>}

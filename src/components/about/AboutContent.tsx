@@ -7,21 +7,25 @@ type Props = {
   about: AboutSection | undefined;
   isMobile: boolean;
   isTablet: boolean;
+  isSmallDesk: boolean;
+  isSmallHeight: boolean;
 }
 
-function AboutContent({ about, isMobile, isTablet }: Props) {
+function AboutContent({ about, isMobile, isTablet, isSmallDesk, isSmallHeight }: Props) {
 
   const getImageWidth = () => {
     if (!about) return;
     if (isMobile) return 400;
-    if (isTablet) return 350;
+    if (isTablet && isSmallHeight) return 350;
+    if (isSmallDesk || isSmallHeight) return 380;
     return 450;
   }
   const getImageHeight = () => {
     if (!about) return;
     if (isMobile) return 400;
-    if (isTablet) return 500;
-    return 600;
+    if (isTablet || isSmallHeight) return 510;
+    if (isSmallDesk ) return 520;
+    return 580;
   }
 
   const description = useMemo(() => getSeparateText({text:about?.description}), [about])
